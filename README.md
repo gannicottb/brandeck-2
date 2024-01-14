@@ -1,7 +1,54 @@
 # brandeck 2
 
-Experimenting with the latest and greatest Next.JS by doing a rewrite of brandeck, instead of trying to migrate it.
+This is the data-driven card generator tool used for Winding Road Games projects.
 
+Google Drive structure (per game):
+```
+root_folder
+  /generated
+    /v1.0-timestamped
+      1.png
+      2.png
+      ...
+  /v1
+    /.0
+      cards*
+    /.1
+      cards*
+    ...
+  /v2
+    /.0
+      cards*
+    ...
+  /art
+    .*
+```
+
+The templates and other logic for each game all live under _games/[game]
+
+Importing a spreadsheet and rendering the cards is done generically.
+
+```
+Config:
+```
+SERVICE_ACCOUNT_EMAIL
+SERVICE_ACCOUNT_KEY
+(GAMENAME)_ROOT_ID = the root Google Drive folder containing card spreadsheets in a known structure
+```
+Pages:
+
+/[game]/cards/[Major].[Minor] - Renders the cards for vMajor.Minor using the appropriate templates
+
+API:
+
+/api/[game]/generate/[Major].[Minor] - import, parse, render, screenshot, and upload to a known location
+
+# Add a new version
+
+1. npm run newver [game] 
+  ex: npm run newver astromon
+
+===
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
