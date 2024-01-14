@@ -1,3 +1,8 @@
+# brandeck 2
+
+Experimenting with the latest and greatest Next.JS by doing a rewrite of brandeck, instead of trying to migrate it.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
