@@ -3,9 +3,14 @@ import { parseSheet } from "@/app/lib/Utils";
 
 export interface CardData extends CardRow {
   name: string
+  type: string
   power: number // this is a lie until we mutate the object in transform
   art: string
   text: string
+}
+
+export interface CardProps {
+  data: CardData
 }
 
 export async function _parseSheet(csv: string) {

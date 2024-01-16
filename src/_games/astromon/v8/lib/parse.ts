@@ -17,6 +17,10 @@ export interface CardData extends CardRow {
   text: string;
 }
 
+export interface CardProps {
+  data: CardData
+}
+
 export async function _parseSheet(csv: string) {
   return parseSheet<CardData>(csv, (data: CardData) => {
     return data

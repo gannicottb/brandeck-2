@@ -1,10 +1,11 @@
-import { CardSizes } from "@/app/lib/CardPageProps";
-import { CardData, CardProps } from "../lib/parse";
-import { ComponentType } from "react";
 import dynamic from "next/dynamic";
+import { CardData, CardProps } from "../lib/parse";
+import { CardSizes } from "@/app/lib/CardPageProps";
+import { ComponentType } from "react";
 
-export default function Card({ data, size }: { data: CardData, size: string }) {
+export default async function Card({ data, size }: { data: CardData, size: string }) {
   const CardOfType: ComponentType<CardProps> = dynamic<CardProps>(() => import(`./${data.type}`))
+
   return (
     <div className={`
       ${CardSizes[size]}
